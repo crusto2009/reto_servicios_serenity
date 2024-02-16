@@ -10,9 +10,9 @@ import net.thucydides.core.util.EnvironmentVariables;
 import static com.jsonplaceholder.constains.Constains.baseUrl;
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 import static org.hamcrest.CoreMatchers.hasItems;
-import static org.hamcrest.Matchers.not;
 
-public class getCommentForIdDef {
+
+public class getStepCommentForIdDef {
 
     private String restBaseUrl;
     private EnvironmentVariables environmentVariables;
@@ -22,23 +22,28 @@ public class getCommentForIdDef {
     public void setUpBaseUrl(){
         restBaseUrl= environmentVariables.optionalProperty("restapi.baseurl")
                 .orElse(baseUrl);
-        cristian = Actor.named("Usuario").whoCan(
+
+
+        cristian = Actor.named("Usuario Cristian").whoCan(
                 CallAnApi.at(restBaseUrl)
         );
     }
 
-    @Cuando("se realiza una solicitud GET al servicio con un postId")
-    public void seRealizaUnaSolicitudGETAlServicioConUnPostId() {
+    @Cuando("se realiza una solicitud GET al servicio comentarios  con un postId")
+    public void seRealizaUnaSolicitudGETAlServicioComentariosConUnPostId() {
         cristian.attemptsTo(
                 GetCommentTask.on()
         );
     }
+
     @Entonces("se debe recibir una respuesta con la información de todos los comentarios relacionados con el postId")
     public void seDebeRecibirUnaRespuestaConLaInformaciónDeTodosLosComentariosRelacionadosConElPostId() {
         cristian.should(
                 seeThatResponse(
-                        "Los resultado son ",
-                        response -> response.body("name",hasItems("id labore ex et quam laborum","quo vero reiciendis velit similique earum"))
+                        "Retorna el nombre todos los comentarios segun el postId",
+                        response -> response.body("name",
+                                hasItems("modi ut eos dolores illum nam dolor"
+                                ))
                 )
         );
     }

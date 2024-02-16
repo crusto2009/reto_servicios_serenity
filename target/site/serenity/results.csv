@@ -1,2 +1,2 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Supervisar titulos vacios de las publicaciones.","Validar  titulos de las publicaciones no esten vacios","SUCCESS","2024-02-12T20:33:14.2323803-05:00[America/Bogota]","0.0","4.92"
+"Visualizar todos los comentarios relacionados con un postId.","Obtener comentarios para un postId específico","SUCCESS","2024-02-16T06:26:39.8831621-05:00[America/Bogota]","0.0","5.83"

@@ -9,8 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/",
         glue = "com.jsonplaceholder",
-        tags = "@GetServiceTodos",
+        tags = "@GetServiceCommentsForId",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class ServicesRunner {
+
 }

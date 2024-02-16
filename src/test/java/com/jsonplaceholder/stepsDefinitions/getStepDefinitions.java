@@ -1,7 +1,10 @@
 package com.jsonplaceholder.stepsDefinitions;
 
 
+import com.jsonplaceholder.models.Todos.ResponseArrayTodos;
+import com.jsonplaceholder.models.Todos.ResponseModelTodos;
 import com.jsonplaceholder.questions.ResponseServerCode;
+import com.jsonplaceholder.task.CommentsTask.GetCommentTask;
 import com.jsonplaceholder.task.TodosTask.GetServiceTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.es.*;
@@ -9,7 +12,9 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.not;
 
 public class getStepDefinitions {
     Actor supervisor= Actor.named("supervisor")
