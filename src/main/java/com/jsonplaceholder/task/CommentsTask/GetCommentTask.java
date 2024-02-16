@@ -1,8 +1,6 @@
 package com.jsonplaceholder.task.CommentsTask;
 
-import com.jsonplaceholder.task.TodosTask.GetServiceTask;
 import com.jsonplaceholder.utils.DatosExcelListas;
-import io.restassured.http.ContentType;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Get;
@@ -21,14 +19,13 @@ public class GetCommentTask  implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         try {
-            LeerExcelInformacion = DatosExcelListas.readExcel("Datos.xlsx","postId");
+            LeerExcelInformacion = DatosExcelListas.readExcel("src/test/resources/features/Data/Datos.xlsx","postId");
 
             actor.attemptsTo(
                     Get.resource("/comments").with(
-                            req -> req
+                            res -> res
                                     .queryParam(LeerExcelInformacion.get(0).get("Param"),LeerExcelInformacion.get(0).get("Id"))
                                     .log().all()
-
                     )
             );
 

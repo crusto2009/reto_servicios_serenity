@@ -11,6 +11,7 @@ public class ResponseGetComments implements Question<Object> {
     @Override
     public Object answeredBy(Actor actor) {
         ArrayList<ResponseModelComments> comments =new ArrayList<ResponseModelComments>();
+
         return SerenityRest.lastResponse().as(comments.getClass());
     }
 
