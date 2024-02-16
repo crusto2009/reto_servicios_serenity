@@ -1,8 +1,6 @@
 package com.jsonplaceholder.questions.CommentsQuestion;
 
 import com.jsonplaceholder.models.Comments.ResponseModelComments;
-import com.jsonplaceholder.models.Todos.ResponseModelTodos;
-import com.jsonplaceholder.questions.TodosQuestion.ResponseGetTodos;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
